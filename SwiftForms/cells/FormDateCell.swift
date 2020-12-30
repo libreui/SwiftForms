@@ -37,6 +37,10 @@ open class FormDateCell: FormValueCell {
         
         titleLabel.text = rowDescriptor?.title
         
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+        
         if let rowType = rowDescriptor?.type {
             switch rowType {
             case .date:
